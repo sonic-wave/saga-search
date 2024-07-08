@@ -1,7 +1,7 @@
 export const searchSkills = async (search) => {
     const params = new URLSearchParams({ q: search });
   
-    const response = await fetch(`https://saga-search-back.onrender.com?${params}`);
+    const response = await fetch(`https://saga-search-back.onrender.com/api/search?${params}`);
     if (!response.ok) {
       throw new Error(response.statusText);
     }
