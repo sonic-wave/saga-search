@@ -1,4 +1,4 @@
-import { takeLatest, debounce, retry, put, spawn, call } from "redux-saga/effects"
+import { takeLatest, debounce, retry, put, spawn } from "redux-saga/effects"
 import { searchSkillsRequest, searchSkillsSuccess, searchSkillsFailure } from "../actions/actionCreators"
 import {
   CHANGE_SEARCH_FIELD,
@@ -26,7 +26,6 @@ function* handleSearchSkillsSaga(action) {
       searchSkills,
       action.payload.search
     )
-    // const data = yield call(searchSkills, action.payload.search)
 
     yield put(searchSkillsSuccess(data))
   } catch (e) {
